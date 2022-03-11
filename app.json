@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "wallie-digital-wallet",
+    "slug": "wallie-digital-wallet",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "wallie-digital-wallet"
+}
