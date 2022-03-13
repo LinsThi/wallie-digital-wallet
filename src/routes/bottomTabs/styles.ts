@@ -8,7 +8,6 @@ export const Container = styled.View<ContainerProps>`
   background-color: ${({ isSelected, theme }) =>
     isSelected ? theme.Colors.EMERALD : 'transparent'};
   top: ${({ isSelected }) => (isSelected ? -40 : 0)}px;
-  /* flex: 1; */
   height: 50px;
   width: 50px;
   align-items: center;
