@@ -1,6 +1,6 @@
 import React, {
   createContext,
-  ReactChildren,
+  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -11,7 +11,7 @@ import React, {
 import { CountryProps } from '~/components/Countries';
 
 interface CountryProviderProps {
-  children: ReactChildren;
+  children: ReactNode;
 }
 
 type CountryContextData = {

@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import BottomSheet from 'react-native-gesture-bottom-sheet';
 
 import { useCountry } from '~/hooks/country';
@@ -19,8 +19,8 @@ type ResponseProps = {
 };
 
 export const Coutries = forwardRef((props, ref) => {
-  const { countries, selectedCountry, handleSetCountry, setAllCountries } =
-    useCountry();
+  const [countries, setCountries] = useState<CountryProps[]>([]);
+  const { selectedCountry, handleSetCountry } = useCountry();
 
   useEffect(() => {
     fetch('https://restcountries.com/v2/all').then(response =>
@@ -32,7 +32,7 @@ export const Coutries = forwardRef((props, ref) => {
           };
         });
 
-        setAllCountries(countryFiltred);
+        setCountries(countryFiltred);
       }),
     );
 
