@@ -1,4 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar } from 'expo-status-bar';
 import React, { useContext, useState, createRef } from 'react';
 import { ThemeContext } from 'styled-components/native';
 
@@ -13,12 +15,14 @@ import * as Sty from './styles';
 
 export function SignUp() {
   const { Colors } = useContext(ThemeContext);
+  const navigation = useNavigation();
   const bottomSheetRef = createRef();
 
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <LinearGradient colors={[Colors.LIME, Colors.EMERALD]} style={{ flex: 1 }}>
+      <StatusBar backgroundColor={Colors.LIME} style="light" />
       <Header />
       <Sty.Container>
         <Sty.ContainerLogo>
@@ -39,7 +43,7 @@ export function SignUp() {
           />
         </Sty.ContainerInput>
 
-        <Sty.Button>
+        <Sty.Button onPress={() => navigation.navigate('HomeTab')}>
           <Sty.TextButton>Continue</Sty.TextButton>
         </Sty.Button>
       </Sty.Container>
