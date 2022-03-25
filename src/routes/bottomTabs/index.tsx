@@ -6,6 +6,7 @@ import more from '~/assets/icons/more.png';
 import scan from '~/assets/icons/scan.png';
 import user from '~/assets/icons/user.png';
 import { Home } from '~/screens/Home';
+import { Scan } from '~/screens/Scan';
 
 import { Container, IconBar } from './styles';
 
@@ -44,6 +45,7 @@ export default function RoutesTabs() {
           right: 0,
           borderTopColor: 'transparent',
           elevation: 0,
+          paddingTop: 20,
         },
       }}
     >
@@ -57,7 +59,7 @@ export default function RoutesTabs() {
       />
       <Tabs.Screen
         name="Scan"
-        component={Home}
+        component={Scan}
         options={{
           tabBarActiveTintColor: Colors.EMERALD,
           tabBarIcon: ({ focused }) => IconBarTab(focused, scan),
